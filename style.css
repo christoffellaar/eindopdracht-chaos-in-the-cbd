@@ -1,34 +1,30 @@
 /* FONTS */
-
     @font-face {
         font-family: 'nunito_regular' ;
-        src: url('/Font/Nunito/static/Nunito-Regular.ttf')
+        src: url('Font/Nunito/static/Nunito-Regular.ttf')
     }
 
     @font-face {
         font-family: 'OpenSans_regular' ;
-        src: url('/Font/Open_Sans/static/OpenSans/OpenSans-Regular.ttf')
+        src: url('Font/Open_Sans/static/OpenSans/OpenSans-Regular.ttf')
     }
 
     @font-face {
         font-family: 'DOS04_bold' ;
-        src: url('/Font/DOS04_BOLD.ttf')
+        src: url('Font/DOS04_BOLD.ttf')
     }
 
 /* Handig */
-
 .hide {
     display: none;
 }
 
 /* UNIVERSEEL */
-
 * {
     box-sizing: border-box;
   }
 
 body { 
-    /* kijken voor grid als het handig als tijd over */
     display: inline-flex;
     background-color: white;
     color: black;
@@ -36,7 +32,7 @@ body {
     border: 5px solid black;
     height: 98vh; 
     min-width: 99vw;
-    /* 95vh omdat de rand anders onder het scherm komt */
+    /* 99vh omdat de rand anders onder het scherm komt */
 }
 
 main  {
@@ -44,30 +40,30 @@ main  {
     align-items: center;
     flex-direction: column;
     width: 100%; 
-    background-image: url("/img/black-circle-800px.jpg");
+    background-image: url("img/black-circle-800px.jpg");
     background-repeat: no-repeat;
     background-position: center ;
 }
 
-h1 {
+h2 {
     z-index: 100;
     text-align: center;
     width: 100%;
     margin-bottom: 4em;
     margin: 10vw;
-    font-family: nunito_regular, Helvetica, sans-serif, Helvetica, sans-serif;
+    font-family: nunito_regular, Helvetica, sans-serif;
     color: white;
     font-size: 3em;
 }
 
 
 h2 {
-    font-family: nunito_regular, Helvetica, sans-serif, Helvetica, sans-serif;
+    font-family: nunito_regular, Helvetica, sans-serif;
     font-size: 2em;
 }
 
-h1+p, h1+p+p{
-    font-family: OpenSans_regular, Helvetica, sans-serif, Helvetica, sans-serif;
+h2+p, h2+p+p{
+    font-family: OpenSans_regular, Helvetica, sans-serif;
     color: white;
     font-size: 1em;
     text-align: center;
@@ -76,10 +72,11 @@ h1+p, h1+p+p{
 @media screen and (max-width: 500px) 
 {
     body {
+    display: block;
     background-color: black;
     flex-direction: column;
-    border: none;
-    margin: none;
+    border: 0;
+    margin: 0;
     }
 
     main {
@@ -89,36 +86,38 @@ h1+p, h1+p+p{
 
 
 /* HEADER/MENU (vak links) */
+header {
+    z-index: 100;
+    border-right: 3px solid black;
+}
 
-    header {
-        z-index: 100;
-        border-right: 3px solid black;
-    }
+nav {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    margin: 0;
+    padding-bottom: 25%;
+    height: 50vh;
+}
 
-    nav {
-        background: white;
-        display: flex;
-        flex-direction: column;
-        /* border: 5px solid red; */
-        padding-left: 20px;
-        margin: 0;
-        padding-bottom: 25%;
-        height: 50vh;
-    }
-    
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-     }
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-    nav a {
-            font-size: 2.2em;   
-            text-decoration: none;
-            color: black;
-            font-family: nunito_regular, Helvetica, sans-serif;
-            line-height: 2em;
-            }
+nav a {
+        font-size: 2.2em;   
+        text-decoration: none;
+        color: black;
+        font-family: nunito_regular, Helvetica, sans-serif;
+        line-height: 2em;
+}
+
+ul a:hover{
+    text-decoration: line-through;
+}
 
 @media screen and (max-width: 500px) {
     
@@ -137,7 +136,6 @@ h1+p, h1+p+p{
 
     nav ul {
         display: inline-flex; 
-
     }
 
     nav ul a {
@@ -150,65 +148,85 @@ h1+p, h1+p+p{
 
 
 /* CONTACT */
-            /* contact box */
-    header section {
-        background: white;
-        display: flex;
-        flex-direction:column;
-        justify-content: flex-end;
-        padding: 20px;
-        /* border: 5px solid pink; */
-        width: 250px;
-        height:47vh; 
-        /* 47vh omdat het anders onder de rand komt */
+    /* contact box */
+header section {
+    background: white;
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-end;
+    padding: 20px;
+    width: 250px;
+    height:47vh; 
+    /* 47vh omdat het anders onder de rand komt */
+}
 
-    }
+section > h1 {
+    font-family: DOS04_bold, Helvetica, sans-serif;
+    font-size: 4em;
+    padding-top: 10%;
+    margin: 0;
+    text-align: right;
+    color: black;
+}
 
-    header h3 {
-        font-family: DOS04_bold, Helvetica, sans-serif;
-        font-size: 4em;
-        padding-top: 10%;
-        margin: 0;
-        text-align: right;
-    }
-        /* contact items */
-    section ul a {
-        font-family: nunito_regular, Helvetica, sans-serif, Helvetica, sans-serif;
-        font-size: 1em;
-        text-decoration: none;
-        color: black;
-    }
+    /* contact items */
+section ul a {
+    font-family: nunito_regular, Helvetica, sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    color: black;
+}
 
-    section ul {
-        text-align: right;
-    }
-    /* Waarom volgt de e-mail niet mee met right align? */
+section ul {
+    text-align: right;
+}
 
-        /* Facebook icon */
-    section ul li img {
-        width: 30px;
-        height: auto;
-    }
+    /* Facebook icon */
+section ul li img {
+    width: 30px;
+    height: auto;
+}
 
-    @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
         header section, h3, section ul, ul {
-            display: none;
+        display: none;
         }
     }
 
+/* CONTACT/FOOTER (FOOTER van INDEX.html) */
+    @media screen and (max-width: 500px) {
+    footer p {
+        display: flex;
+        text-align: center;
+        height: 100vw;
+        overflow: scroll;
+
+    }
+    footer p a {
+    z-index: 100;
+    align-self: flex-end;
+    align-items: center;
+    font-size: 2em;   
+    text-decoration: none;
+    color: white;
+    font-family: nunito_regular, Helvetica, sans-serif;
+    line-height: 2em;
+    padding-right: 10vw;
+    }
+}
 
 /* MAIN - HOME */
-
 main section {
     position: absolute;
     margin-top: 15%;
     text-align: center;
 }
+
     /* video */
 
     @media screen and (max-width: 500px) {
         main section {
-            padding-top: 15vh;
+            padding-top: 20vh;
         }
     }
 
@@ -236,43 +254,98 @@ main ol li video {
 main ol li p {
     font-size: 1.4em;
     color: black;
-    font-family: nunito_regular, Helvetica, sans-serif, Helvetica, sans-serif;
-    padding: 40px 10px 10px; 0px;
+    font-family: nunito_regular, Helvetica, sans-serif;
+    padding: 40px 10px 10px 0px;
     width: 100%;
     text-align: center;
 }
 
+@media screen and (max-width: 500px) {
+    
+    main ol {
+        flex-wrap: wrap;
+        width: 100%;
+        background: black;
+        text-align: center;
+    }
+
+    main ol li {
+        width: 42vw;
+        height: 50vw; 
+    }
+    
+    
+    main ol li video {
+        border: 3px solid white;
+        text-align: center;
+        width: 30vw;
+        height: 30vw;
+    }
+    
+    main ol li p {
+        font-size: 1em;
+        color: white;
+        text-align: center;
+        padding: 5px;
+    }
+}
+
+
 /* MAIN - EVENTS */
-article {
+figure {
     min-width: 100px;
     text-align: center;
 }
-article img {
+
+figure img {
     width: 600px;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 5%;
 }
 
-article p {
-font-family: OpenSans_regular, Helvetica, sans-serif, Helvetica, sans-serif;
+figure p {
+font-family: OpenSans_regular, Helvetica, sans-serif;
 color: white;
 text-align: center;
 font-size: 1.8em;
 margin-top: 3vh;
 min-width: 100%;
 }
-
-article a {
+    /* button */
+figure a {
     font-family: nunito_regular, Helvetica, sans-serif, Helvetica, sans-serif;
-    font-size: 3em;
+    font-size: 2.5em;
     background-color: white;
     color: black;
     border: 10px solid white; 
     margin: 10%;
-
+    transition: 0.3s;
 }
 
+figure a:hover {
+    transition: .2s ease;
+    font-size: 2.8em;
+}
+
+@media screen and (max-width: 500px) {
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5vw;
+    }
+    
+    figure img {
+        width: 90vw;
+        margin: 0;
+        text-align: center;
+    }
+
+    figure a {
+        font-size: 2em;
+    }
+}
 
 /* ABOUT */
 
@@ -283,6 +356,7 @@ main p {
 
 }
 main p:nth-of-type(2n){
+    color: rgb(192, 192, 192);
     margin-top: 4%;
     width: 50%;
     height: 22%;
@@ -290,5 +364,19 @@ main p:nth-of-type(2n){
     overflow: scroll;
 }
 
+@media screen and (max-width: 500px) {
+    main p {
+        margin-top: 5vw;
+        width: 93vw;
+    }
+    main p:nth-of-type(2n) {
+        width: 75vw;
+        height: 100vw;
+    }
+}
 
-
+@media screen and (min-width: 500px) {
+    footer {
+        visibility: hidden;
+    }
+}
